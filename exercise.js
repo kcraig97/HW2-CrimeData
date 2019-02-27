@@ -1,38 +1,53 @@
 var exercise = {};
 
-exercise.countRecords = function(data){
-    //-------------------------------------------
-    // YOUR CODE
-    // Return the total number of records
-    //-------------------------------------------
-    return 'Error: countRecords not implemented'; 
+exercise.countRecords = function(dataarray){
+var records = 0
+    function add(element){
+        records++
+        }
+        
+    dataarray.forEach(add);
+
+    console.log(records)
+    return records
 };
 
 exercise.countDistrictCrimes = function(data,district){
-    //-------------------------------------------
-    // YOUR CODE
-    // Return the number of crimes 
-    // for the given district
-    //-------------------------------------------
-    return 'Error: countDistrictCrimes not implemented'; 
+    var count = 0
+    function countDistrictCrimes(element){
+      if (element[19]== district)
+      count++
+    }
+    data.forEach(countDistrictCrimes);
+
+    console.log(countDistrictCrimes)
+    return count
 };
 
 exercise.countPrimaryType = function(data,primaryType){
-    //-------------------------------------------
-    // YOUR CODE
-    // Return the number of crimes 
-    // for the giving primary type
-    //-------------------------------------------
-    return 'Error: countPrimaryType not implemented';
+    var theft = 0
+    function counttheft(element){
+        if (element[13]== primaryType){
+            theft++    
+        }
+        
+    }
+
+    data.forEach(counttheft)
+
+    console.log(theft)
+    return theft
 };
 
 exercise.countLocation = function(data,location){
-    //-------------------------------------------
-    // YOUR CODE
-    // Return the number of crimes 
-    // for the given location
-    //-------------------------------------------
-    return 'Error: countLocation not implemented';
+    var street =0
+    function countlocation(element){
+        if (element[15]==location)
+        street++
+    }
+    data.forEach(countlocation);
+    console.log(street)
+    return street
 };
 
 
@@ -43,12 +58,11 @@ exercise.buildLatLngPoint = function(crime){
     // 
     // For example:
     //
-    // var point = {};    
-    // point.latitude = crime[latitudeColumnNumber];
-    // point.longitude = crime[longitudeColumnNumber];
-    // return point;    
+    var point = {};    
+    point.latitude = crime[26];
+    point.longitude = crime[28];
+    return point;    
     //-------------------------------------------    
-    return 'Error: buildLatLngPoint not implemented';
 };
 
 
